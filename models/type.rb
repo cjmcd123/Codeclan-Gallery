@@ -38,14 +38,15 @@ class Type
 
   def delete()
     # method for deleting one type from the database:
-    # 1. SQL code with command "SELECT *" & the table sellected from.
+    # 1. SQL code with command "DELETE" the table sellected from & the selection
+    # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
 
   end
 
   def self.all()
-    # method for returning all categories in the database, the "self." denotes
-    # the method is called on the class itself:
+    # method for returning all types in the database, the "self." denotes the
+    # method is called on the class itself:
     # 1. SQL code with command "SELECT *" & the table sellected from.
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
@@ -53,9 +54,9 @@ class Type
 
   end
 
-  def self.find( id )
-    # method for returning one category from the database, the "self." denotes
-    # the method is called on the class itself:
+  def self.find(id)
+    # method for returning one type from the database, the "self." denotes the
+    # method is called on the class itself:
     # 1. SQL code with command "SELECT", the table sellected from & the selection
     # criteria
     # 2. passing in the value for selection
@@ -67,7 +68,7 @@ class Type
   end
 
   def self.delete_all
-    # method for deleting all artists from the database, the "self." denotes the
+    # method for deleting all types from the database, the "self." denotes the
     # method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table sellected from.
     # 2. run the SQL code through the sql runner for sanatised input.

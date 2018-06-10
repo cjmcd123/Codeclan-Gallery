@@ -56,7 +56,7 @@ class Category
 
   end
 
-  def self.find( id )
+  def self.find(id)
     # method for returning one category from the database, the "self." denotes
     # the method is called on the class itself:
     # 1. SQL code with command "SELECT", the table sellected from & the selection
@@ -70,8 +70,8 @@ class Category
   end
 
   def self.delete_all
-    # method for deleting all artists from the database, the "self." denotes the
-    # method is called on the class itself:
+    # method for deleting all categories from the database, the "self." denotes 
+    # the method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table sellected from.
     # 2. run the SQL code through the sql runner for sanatised input.
 

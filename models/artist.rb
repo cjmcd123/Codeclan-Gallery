@@ -54,7 +54,7 @@ class Artist
 
   end
 
-  def self.find( id )
+  def self.find(id)
     # method for returning one artist from the database, the "self." denotes the
     # method is called on the class itself:
     # 1. SQL code with command "SELECT", the table sellected from & the selection
