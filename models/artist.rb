@@ -36,6 +36,15 @@ class Artist
 
   end
 
+  def delete
+    # method for deleting one artist from database, the "self." denotes the m
+    # method is called on the class itself:
+    # 1. SQL code with command "DELETE" the table sellected from & the selection
+    # criteria.
+    # 2. run the SQL code through the sql runner for sanatised input.
+
+  end
+
   def self.all()
     # method for returning all artist in the database, the "self." denotes the
     # method is called on the class itself:
@@ -60,11 +69,11 @@ class Artist
   end
 
   def self.delete_all
-    # method for returning one artist from the database, the "self." denotes the
+    # method for deleting all artists from the database, the "self." denotes the
     # method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table sellected from.
     # 2. run the SQL code through the sql runner for sanatised input.
-  
+
   end
 
 end
