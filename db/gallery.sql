@@ -1,5 +1,6 @@
 DROP TABLE types;
 DROP TABLE artists;
+DROP TABLE categories;
 DROP TABLE exhibits;
 
 CREATE TABLE types
@@ -19,7 +20,7 @@ CREATE TABLE categories
 (
   id SERIAL8 PRIMARY KEY,
   category VARCHAR(255)
-)
+);
 
 CREATE TABLE exhibits
 (
