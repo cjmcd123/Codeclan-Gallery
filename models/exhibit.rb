@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Type
 
   attr_reader :id
-  attr_accessor :type
+  attr_accessor :title, :year, :artist_id, :type_id
 
   def initialize(options)
     # method called when creating the class instance, populates the variables
@@ -94,7 +94,7 @@ class Type
   end
 
   def self.delete_all
-    # method for deleting all categories from the database, the "self." denotes 
+    # method for deleting all categories from the database, the "self." denotes
     # the method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
