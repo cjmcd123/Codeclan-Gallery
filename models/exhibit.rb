@@ -9,6 +9,11 @@ class Exhibit
   def initialize(options)
     # method called when creating the class instance, populates the variables
     # from information given when creating the instance.
+    @id = options["id"].to_i if options["id"]
+    @title = options["title"]
+    @year = options["year"]
+    @artist_id = options["artist_id"]
+    @type_id = options["type_id"]
   end
 
   def save()
@@ -21,7 +26,14 @@ class Exhibit
     # input.
     # 4. return the id created by the serial field of the database table to the
     # instance of the class.
-
+    sql = "INSERT INTO exhibits
+      (title, year, artist_id, type_id)
+    VALUES
+      ($1, $2, $3, $4)
+    RETURNING id"
+    values = [@title, @year, @artist_id, @type_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
   end
 
   def artist_name()
@@ -33,7 +45,11 @@ class Exhibit
     # input.
     # 4. return the the data from the database and transform it into an instances
     # of the class.
-
+    sql = "SELECT name FROM artist WHERE id = $1"
+    values = [@artist_id]
+    results = SqlRunner.run(sql, values)
+    answer = Artist.new(results.first)
+    return answer.name
   end
 
   def type_name()
@@ -45,7 +61,11 @@ class Exhibit
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-
+    sql = "SELECT name FROM type WHERE id = $1"
+    values = [@type_id]
+    results = SqlRunner.run(sql, values)
+    answer = Type.new(results.first)
+    return answer.type
   end
 
   def categories()
@@ -59,7 +79,10 @@ class Exhibit
     # input.
     # 4. return the the data from the database and map it to an array of class
     # instances.
-
+    sql = "SELECT * FROM categories WHERE exhibit_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|exhibit| Exhibit.new(exhibit)}
   end
 
   def delete()
@@ -67,7 +90,9 @@ class Exhibit
     # 1. SQL code with command "DELETE" the table selected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
-
+    sql = "DELETE * FROM exhibits WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.all()
@@ -77,7 +102,9 @@ class Exhibit
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-
+    sql = "SELECT * FROM exhibits"
+    results = SqlRunner.run(sql)
+    return results.map {|exhibit| Exhibit.new(exhibit)}
   end
 
   def self.find(id)
@@ -90,7 +117,10 @@ class Exhibit
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-
+    sql = "SELECT * FROM exhibits WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Exhibit.new(results.first)
   end
 
   def self.delete_all
@@ -98,7 +128,8 @@ class Exhibit
     # the method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
-
+    sql = "DELETE FROM exhibits"
+    SqlRunner.run(sql)
   end
 
 end
