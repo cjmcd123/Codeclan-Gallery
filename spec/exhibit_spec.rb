@@ -13,13 +13,13 @@ class TypeTest < MiniTest::Test
   def setup()
     # method called before all tests to provide data for tests.
     @artist = Artist.new({
-      "id" => 1,
+      "id" => "1",
       "name" => "Vincent van Gogh",
       "dob" => "1853-03-30"
       })
 
     @type = Type.new ({
-      "id" => 1,
+      "id" => "1",
       "type" => "painting"
       })
 
@@ -40,12 +40,5 @@ class TypeTest < MiniTest::Test
     assert_equal(1950, @exhibit.year)
   end
 
-  def test_exhibit_has_artist()
-    assert_equal(1, @exhibit.id)
-  end
-
-  def test_exhibit_has_type()
-    assert_equal(1, @exhibit.id)
-  end
-
+  
 end
