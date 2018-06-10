@@ -1,7 +1,7 @@
 require_relative( '../db/sql_runner' )
 # calls the sql runner file to allow running of SQL requests outside of class
 
-class Type
+class Exhibit
 
   attr_reader :id
   attr_accessor :title, :year, :artist_id, :type_id

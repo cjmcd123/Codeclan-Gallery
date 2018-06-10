@@ -1,6 +1,6 @@
 require_relative( '../db/sql_runner' )
 
-class Biting
+class Relation
 
   attr_reader( :zombie_id, :victim_id, :id )
 
