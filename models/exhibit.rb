@@ -26,7 +26,7 @@ class Type
 
   def artist_name()
     # method for returning the name of the artist as the table only saves the id:
-    # 1. SQL code with command "SELECT", the table sellected from & the selection
+    # 1. SQL code with command "SELECT", the table selected from & the selection
     # criteria.
     # 2. pass in the value for selection.
     # 3. run the SQL code with the values through the sql runner for sanatised
@@ -38,7 +38,7 @@ class Type
 
   def type_name()
     # method for returning the type of exhibit as the table only saves the id:
-    # 1. SQL code with command "SELECT", the table sellected from & the selection
+    # 1. SQL code with command "SELECT", the table selected from & the selection
     # criteria.
     # 2. pass in the value for selection.
     # 3. run the SQL code with the values through the sql runner for sanatised
@@ -50,7 +50,7 @@ class Type
 
   def categories()
     # method for returning the categories of the exhibit:
-    # 1. SQL code with command "SELECT", the table sellected from & the selection
+    # 1. SQL code with command "SELECT", the table selected from & the selection
     # criteria.
     # note this SQL code will use an INNER JOIN as the relationship between
     # exhibits & categories is many-to-many
@@ -63,17 +63,17 @@ class Type
   end
 
   def delete()
-    # method for deleting one type from the database:
-    # 1. SQL code with command "DELETE" the table sellected from & the selection
+    # method for deleting one category from the database:
+    # 1. SQL code with command "DELETE" the table selected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
 
   end
 
   def self.all()
-    # method for returning all types in the database, the "self." denotes the
-    # method is called on the class itself:
-    # 1. SQL code with command "SELECT *" & the table sellected from.
+    # method for returning all categories in the database, the "self." denotes
+    # the method is called on the class itself:
+    # 1. SQL code with command "SELECT *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
@@ -81,9 +81,9 @@ class Type
   end
 
   def self.find(id)
-    # method for returning one type from the database, the "self." denotes the
-    # method is called on the class itself:
-    # 1. SQL code with command "SELECT", the table sellected from & the selection
+    # method for returning one category from the database, the "self." denotes
+    # the method is called on the class itself:
+    # 1. SQL code with command "SELECT", the table selected from & the selection
     # criteria
     # 2. passing in the value for selection
     # 3. run the SQL code with the values through the sql runner for sanatised
@@ -94,9 +94,9 @@ class Type
   end
 
   def self.delete_all
-    # method for deleting all types from the database, the "self." denotes the
-    # method is called on the class itself:
-    # 1. SQL code with command "DELETE *" & the table sellected from.
+    # method for deleting all categories from the database, the "self." denotes 
+    # the method is called on the class itself:
+    # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
 
   end
