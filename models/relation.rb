@@ -8,8 +8,8 @@ class Relation
     # method called when creating the class instance, populates the variables
     # from information given when creating the instance.
     @id = options["id"].to_i if options["id"]
-    @exhibit_id = options["exhibit"]
-    @category_id = options["category"]
+    @exhibit_id = options["exhibit_id"]
+    @category_id = options["category_id"]
   end
 
   def save()
