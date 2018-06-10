@@ -9,6 +9,8 @@ class Type
   def initialize(options)
     # method called when creating the class instance, populates the variables
     # from information given when creating the instance.
+    @id = options["id"].to_i if options["id"]
+    @type = options["type"]
   end
 
   def save()
@@ -21,7 +23,14 @@ class Type
     # input.
     # 4. return the id created by the serial field of the database table to the
     # instance of the class.
-
+    sql = "INSERT INTO types
+      (type)
+    VALUES
+      ($1)
+    RETURNING id"
+    values = [@type]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
   end
 
   def exhibits()
@@ -33,7 +42,10 @@ class Type
     # input.
     # 4. return the the data from the database and map it to an array of class
     # instances.
-
+    sql = "SELECT * FROM exhibits WHERE type_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|type| Type.new(type)}
   end
 
   def delete()
@@ -41,7 +53,9 @@ class Type
     # 1. SQL code with command "DELETE" the table selected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
-
+    sql = "DELETE * FROM types WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.all()
@@ -51,7 +65,9 @@ class Type
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-
+    sql = "SELECT * FROM types"
+    results = SqlRunner.run(sql)
+    return results.map {|type| Type.new(type)}
   end
 
   def self.find(id)
@@ -64,7 +80,10 @@ class Type
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-
+    sql = "SELECT * FROM types WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Type.new(results.first)
   end
 
   def self.delete_all
@@ -72,7 +91,8 @@ class Type
     # method is called on the class itself:
     # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
-
+    sql = "DELETE FROM types"
+    SqlRunner.run(sql)
   end
 
 end
