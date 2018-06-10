@@ -19,7 +19,7 @@ class TypeTest < MiniTest::Test
 
 
   def test_has_type()
-    assert_equal("painting", @artist.type)
+    assert_equal("painting", @type.type)
   end
 
 
