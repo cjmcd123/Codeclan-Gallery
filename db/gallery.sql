@@ -1,8 +1,8 @@
-DROP TABLE types;
-DROP TABLE artists;
-DROP TABLE categories;
-DROP TABLE exhibits;
 DROP TABLE relations;
+DROP TABLE exhibits;
+DROP TABLE categories;
+DROP TABLE artists;
+DROP TABLE types;
 
 CREATE TABLE types
 (
@@ -35,6 +35,6 @@ CREATE TABLE exhibits
 CREATE TABLE relations
 (
   id SERIAL8 PRIMARY KEY,
-  exhibit_id INT8 REFERENCES exhibit(id) ON DELETE CASCADE,
+  exhibit_id INT8 REFERENCES exhibits(id) ON DELETE CASCADE,
   category_id INT8 REFERENCES categories(id) ON DELETE CASCADE
 )
