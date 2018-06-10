@@ -26,7 +26,7 @@ class Artist
 
   def exhibits()
     # method for returning all exhibits by the artist:
-    # 1. SQL code with command "SELECT", the table sellected from & the selection
+    # 1. SQL code with command "SELECT", the table selected from & the selection
     # criteria.
     # 2. pass in the value for selection.
     # 3. run the SQL code with the values through the sql runner for sanatised
@@ -38,7 +38,7 @@ class Artist
 
   def delete
     # method for deleting one artist from database:
-    # 1. SQL code with command "DELETE" the table sellected from & the selection
+    # 1. SQL code with command "DELETE" the table selected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
 
@@ -47,7 +47,7 @@ class Artist
   def self.all()
     # method for returning all artist in the database, the "self." denotes the
     # method is called on the class itself:
-    # 1. SQL code with command "SELECT *" & the table sellected from.
+    # 1. SQL code with command "SELECT *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
@@ -70,7 +70,7 @@ class Artist
   def self.delete_all
     # method for deleting all artists from the database, the "self." denotes the
     # method is called on the class itself:
-    # 1. SQL code with command "DELETE *" & the table sellected from.
+    # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
 
   end
