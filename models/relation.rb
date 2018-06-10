@@ -32,6 +32,14 @@ class Relation
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE relations SET
+      (exhibit_id, category_id) =  ($1, $2)
+    WHERE id = $3"
+    values = [@exhibit_id, @category_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def exhibit()
     # method for returning the exhibit:
     # 1. SQL code with command "SELECT", the table selected from & the selection

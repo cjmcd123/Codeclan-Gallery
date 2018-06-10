@@ -33,6 +33,14 @@ class Type
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE types SET
+      (type) = ($1)
+    WHERE id = $2"
+    values = [@type, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def exhibits()
     # method for returning all exhibits of the type:
     # 1. SQL code with command "SELECT", the table selected from & the selection

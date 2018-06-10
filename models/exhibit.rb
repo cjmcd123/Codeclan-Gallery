@@ -36,6 +36,15 @@ class Exhibit
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE exhibits SET
+      (title, year, artist_id, type_id) =
+      ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@title, @year, @artist_id, @type_id, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def artist_name()
     # method for returning the name of the artist as the table only saves the id:
     # 1. SQL code with command "SELECT", the table selected from & the selection
