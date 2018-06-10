@@ -7,7 +7,7 @@ DROP TABLE relations;
 CREATE TABLE types
 (
   id SERIAL8 PRIMARY KEY,
-  style VARCHAR(255)
+  type VARCHAR(255)
 );
 
 CREATE TABLE artists
