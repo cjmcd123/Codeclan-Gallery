@@ -37,8 +37,7 @@ class Artist
   end
 
   def delete
-    # method for deleting one artist from database, the "self." denotes the m
-    # method is called on the class itself:
+    # method for deleting one artist from database:
     # 1. SQL code with command "DELETE" the table sellected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.

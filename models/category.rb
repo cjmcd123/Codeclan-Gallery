@@ -39,8 +39,7 @@ class Category
   end
 
   def delete()
-    # method for deleting on category from the database, the "self." denotes
-    # the method is called on the class itself:
+    # method for deleting one category from the database:
     # 1. SQL code with command "SELECT *" & the table sellected from.
     # 2. run the SQL code through the sql runner for sanatised input.
 
