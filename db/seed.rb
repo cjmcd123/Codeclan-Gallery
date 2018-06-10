@@ -1,7 +1,8 @@
 require_relative("../models/artist.rb")
-require_relative("../models/tpye.rb")
+require_relative("../models/type.rb")
 require_relative("../models/category.rb")
 require_relative("../models/exhibit.rb")
+require_relative("../models/relation.rb")
 require("pry-byebug")
 
 Artist.delete_all()
@@ -324,7 +325,7 @@ relation12.save()
 
 relation13 = Relation.new({
   "exhibit_id" => exhibit6.id,
-  "category_id" => category15.id
+  "category_id" => category14.id
   })
 relation13.save()
 
