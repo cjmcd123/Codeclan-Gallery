@@ -19,7 +19,7 @@ class CategoryTest < MiniTest::Test
 
 
   def test_has_category()
-    assert_equal("modern art", @artist.category)
+    assert_equal("modern art", @category.category)
   end
 
 
