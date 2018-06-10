@@ -40,7 +40,8 @@ class Category
 
   def delete()
     # method for deleting one category from the database:
-    # 1. SQL code with command "DELETE" & the table sellected from.
+    # 1. SQL code with command "DELETE" the table sellected from & the selection
+    # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
 
   end
