@@ -69,7 +69,7 @@ class Artist
     # instances.
     sql = "SELECT * FROM artists"
     results = SqlRunner.run(sql)
-    return results.map {|artist| Artist.new(artist) }
+    return results.map {|artist| Artist.new(artist)}
   end
 
   def self.find(id)
@@ -94,7 +94,7 @@ class Artist
     # 1. SQL code with command "DELETE *" & the table selected from.
     # 2. run the SQL code through the sql runner for sanatised input.
     sql = "DELETE FROM artists"
-    SqlRunner.run( sql )
+    SqlRunner.run(sql)
   end
 
 end
