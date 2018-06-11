@@ -1,0 +1,28 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<br></br>
+<form method="post" action="/admin/exhibits">
+  <label for="title">Title:</label>
+  <input id="title" type="text" name="title">
+<br></br>
+  <label for="year">Year:</label>
+  <input id="year" type="number" name="year">
+<br></br>
+    <select id="artist-select" name="artist_id">
+      <%for artist in @artists%>
+      <option value="<%=artist.id%>"><%=artist.name%></option>
+      <%end%>
+    </select>
+    <select id="type-select" name="type_id">
+      <%for type in @types%>
+      <option value="<%=type.id%>"><%=type.type%></option>
+      <%end%>
+    </select>
+
+
+  <input type="submit" value="Add Exhibit"/>
+</form>
