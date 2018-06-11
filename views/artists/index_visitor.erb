@@ -1,0 +1,21 @@
+<h1>Artists</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Date of Birth</th>
+    <th></th>
+    <th>Exhibits</th>
+  </tr>
+
+  <% for artist in @artists %>
+  <tr>
+    <td><a href="/artists/<%= artist.id%>"><%= artist.name%></a></td>
+    <td>|</td>
+    <td><%= artist.dob%></td>
+    <td>|</td>
+    <td><a href="/exhibits/artist/<%= artist.id %>">Show All exhibits by Artist</a></td>
+    </tr>
+  <%end%>
+</table>
