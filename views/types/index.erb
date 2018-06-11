@@ -1,0 +1,41 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<h1>Types</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th></th>
+    <th>Exhibit Count</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+  <% for type in @types %>
+  <tr>
+    <td><%= type.type%></td>
+    <td>|</td>
+    <td><a href="/admin/exhibits/types/<%= type.id %>"><%= type.exhibits.count%></td>
+      <td>
+      <form method="get" action="/admin/types/<%= type.id%>/edit">
+        <input type="submit" value="Modify Type"/>
+      </form>
+    </td>
+    <td>
+      <form method="post" action="/admin/types/<%= type.id%>/delete">
+        <input type="submit" value="Delete Type"/>
+      </form>
+    </td>
+  </tr>
+  <%end%>
+
+
+
+  <form method="get" action="/admin/types/new">
+    <input type="submit" value="New Type"/>
+  </form>
+</table>

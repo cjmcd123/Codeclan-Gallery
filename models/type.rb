@@ -35,7 +35,7 @@ class Type
 
   def update()
     sql = "UPDATE types SET
-      (type) = ($1)
+      type = $1
     WHERE id = $2"
     values = [@type, @id]
     SqlRunner.run(sql, values)
