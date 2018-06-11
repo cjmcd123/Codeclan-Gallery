@@ -1,0 +1,14 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<form method="post" action="/admin/categories/add">
+
+  <% for category in @categories %>
+  <input type="checkbox" name="<%= category.id.to_i%>" value="<%=category.category%>"><%=category.category%><br>
+
+  <% end %>
+  <input type="submit" value="Add Category">
+</form>

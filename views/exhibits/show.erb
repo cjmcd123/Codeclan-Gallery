@@ -10,10 +10,25 @@ nav.public {
   <p>Artist: <%=@exhibit.artist_name%></p>
   <p>Type: <%=@exhibit.type_name%></p>
 
-
+  <tr>
+    <% array = @exhibit.categories()%>
+    <% for member in array %>
+    <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
+    <% end %>
+  </tr>
+<br></br>
 <form method="get" action="/admin/exhibits/<%= @exhibit.id%>/edit">
   <input type="submit" value="Edit Exhibit"/>
 </form>
+<br></br>
 <form method="post" action="/admin/exhibits/<%= @exhibit.id%>/delete">
   <input type="submit" value="Delete Artist"/>
+</form>
+<br></br>
+<form method="get" action="/admin/categories/add">
+  <input type="submit" value="Add Category"/>
+</form>
+<br></br>
+<form method="get" action="/admin/categories/modify">
+  <input type="submit" value="Modify Categories"/>
 </form>
