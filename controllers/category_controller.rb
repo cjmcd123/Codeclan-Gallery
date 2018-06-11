@@ -14,7 +14,7 @@ get '/categories' do
 end
 
 get '/admin/categories' do
-  @category = Category.all()
+  @categories = Category.all()
   erb (:"categories/index")
 end
 
@@ -22,24 +22,24 @@ get '/admin/categories/new' do
   erb (:"categories/new")
 end
 
-get "/admin/category/:id/edit" do
+get "/admin/categories/:id/edit" do
   @category = Category.find(params[:id].to_i)
   erb(:"categories/edit")
 end
 
-post '/admin/category' do
+post '/admin/categories' do
   @category = Category.new(params)
   @category.save()
   erb(:"categories/create")
 end
 
-post "/admin/category/:id" do
+post "/admin/categories/:id" do
   @category = Category.new(params)
   @category.update()
   erb(:"categories/update")
 end
 
-post "/admin/artists/:id/delete" do
+post "/admin/categories/:id/delete" do
   @category = Category.find(params[:id].to_i)
   @category.delete()
   erb(:"categories/destroy")

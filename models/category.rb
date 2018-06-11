@@ -35,10 +35,10 @@ class Category
 
   def update()
     sql = "UPDATE categories SET
-      (category) =
-      ($1)
+      category =
+      $1
     WHERE id = $2"
-    values = [@type, @id]
+    values = [@category, @id]
     SqlRunner.run(sql, values)
   end
 
