@@ -91,7 +91,7 @@ class Artist
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-    sql = "SELECT * FROM artits WHERE id = $1"
+    sql = "SELECT * FROM artists WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Artist.new(results.first)
