@@ -1,0 +1,27 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<h1>Artists</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th></th>
+    <th>Exhibit Count</th>
+  </tr>
+
+  <% for category in @categories %>
+  <tr>
+    <td><%= category.category%></td>
+    <td>|</td>
+    <td><a href="/exhibits/category/<%= category.id %>"><%= category.exhibits.count%></td>
+  </tr>
+  <%end%>
+
+  <form method="get" action="/admin/categories/new">
+    <input type="submit" value="New Category"/>
+  </form>
+</table>

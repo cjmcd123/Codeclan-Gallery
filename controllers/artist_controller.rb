@@ -37,13 +37,13 @@ get "/admin/artists/:id/edit" do
   erb(:"artists/edit")
 end
 
-post '/artists' do
+post '/admin/artists' do
   @artist = Artist.new(params)
   @artist.save()
   erb(:"artists/create")
 end
 
-post "/artists/:id" do
+post "/admin/artists/:id" do
   @artist = Artist.new(params)
   @artist.update()
   erb(:"artists/update")
