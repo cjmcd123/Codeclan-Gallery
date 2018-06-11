@@ -17,3 +17,40 @@ get '/artists/:id' do
   @artist = Artist.find(params['id'].to_i)
   erb(:"artists/show_visitor")
 end
+
+get '/admin/artists' do
+  @artists = Artist.all()
+  erb (:"artists/index")
+end
+
+get '/admin/artists/new' do
+  erb (:"artists/new")
+end
+
+get '/admin/artists/:id' do
+  @artist = Artist.find(params['id'].to_i)
+  erb(:"artists/show")
+end
+
+get "/admin/artists/:id/edit" do
+  @artist = Artist.find(params[:id].to_i)
+  erb(:"artists/edit")
+end
+
+post '/artists' do
+  @artist = artists.new(params)
+  @artist.save()
+  erb(:"artists/create")
+end
+
+post "/artists/:id" do
+  @artist = Artist.new(params)
+  @artist.update()
+  erb(:"artists/update")
+end
+
+post "/artists/:id/delete" do
+  @artist = Artist.find(params[:id].to_i)
+  @artist.delete()
+  erb(:"artists/destroy")
+end
