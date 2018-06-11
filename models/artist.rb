@@ -64,7 +64,7 @@ class Artist
     # criteria.
     # 2. pass in value for selection.
     # 2. run the SQL code through the sql runner for sanatised input.
-    sql = "DELETE * FROM artists WHERE id = $1"
+    sql = "DELETE FROM artists WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

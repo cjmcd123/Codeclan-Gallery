@@ -38,7 +38,7 @@ get "/admin/artists/:id/edit" do
 end
 
 post '/artists' do
-  @artist = artists.new(params)
+  @artist = Artist.new(params)
   @artist.save()
   erb(:"artists/create")
 end
@@ -49,7 +49,7 @@ post "/artists/:id" do
   erb(:"artists/update")
 end
 
-post "/artists/:id/delete" do
+post "/admin/artists/:id/delete" do
   @artist = Artist.find(params[:id].to_i)
   @artist.delete()
   erb(:"artists/destroy")
