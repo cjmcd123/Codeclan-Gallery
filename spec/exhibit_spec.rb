@@ -40,5 +40,11 @@ class TypeTest < MiniTest::Test
     assert_equal(1950, @exhibit.year)
   end
 
-  
+  def test_exhibit_has_artist()
+    assert_equal(1, @exhibit.artist_id)
+  end
+
+  def test_exhibit_has_type()
+    assert_equal(1, @exhibit.type_id)
+  end
 end
