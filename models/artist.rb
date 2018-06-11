@@ -76,7 +76,7 @@ class Artist
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-    sql = "SELECT * FROM artists"
+    sql = "SELECT * FROM artists ORDER BY id"
     results = SqlRunner.run(sql)
     return results.map {|artist| Artist.new(artist)}
   end

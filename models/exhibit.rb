@@ -111,7 +111,7 @@ class Exhibit
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-    sql = "SELECT * FROM exhibits"
+    sql = "SELECT * FROM exhibits ORDER BY id"
     results = SqlRunner.run(sql)
     return results.map {|exhibit| Exhibit.new(exhibit)}
   end

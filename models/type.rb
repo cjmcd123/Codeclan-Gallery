@@ -73,7 +73,7 @@ class Type
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-    sql = "SELECT * FROM types"
+    sql = "SELECT * FROM types ORDER BY id"
     results = SqlRunner.run(sql)
     return results.map {|type| Type.new(type)}
   end

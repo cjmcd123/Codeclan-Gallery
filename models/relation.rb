@@ -87,7 +87,7 @@ class Relation
     # 2. run the SQL code through the sql runner for sanatised input.
     # 3. return the the data from the database and map it to an array of class
     # instances.
-    sql = "SELECT * FROM relations"
+    sql = "SELECT * FROM relations ORDER BY id"
     results = SqlRunner.run(sql)
     return results.map {|relation| Relation.new(relation)}
   end
