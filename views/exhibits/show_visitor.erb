@@ -1,0 +1,13 @@
+
+  <p>Title: <%=@exhibit.title%></p>
+  <p>Year: <%=@exhibit.year%></p>
+  <p>Artist: <%=@exhibit.artist_name%></p>
+  <p>Type: <%=@exhibit.type_name%></p>
+  <p>Categories: </p>
+
+    <tr>
+      <% array = @exhibit.categories()%>
+      <% for member in array %>
+      <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
+      <% end %>
+    </tr>

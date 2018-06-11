@@ -1,0 +1,36 @@
+<h1>Exhibits</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th>Year</th>
+    <th></th>
+    <th>Artist</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Categories</th>
+  </tr>
+
+  <% for exhibit in @exhibits %>
+  <tr>
+    <td><a href="/exhibits/<%= exhibit.id%>"><%= exhibit.title%></a></td>
+    <td>|</td>
+    <td><%= exhibit.year%></td>
+    <td>|</td>
+    <td><a href="/artists/<%= exhibit.artist_id %>"><%= exhibit.artist_name%></a></td>
+    <td>|</td>
+    <td><a href="/exhibits/type/<%= exhibit.type_id %>"><%= exhibit.type_name%></a></td>
+    <td>|</td>
+
+    <td>
+      <% array = exhibit.categories()%>
+      <% for member in array %>
+      <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
+      <% end %>
+    </td>
+
+  </tr>
+  <%end%>
+</table>

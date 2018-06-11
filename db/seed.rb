@@ -264,7 +264,7 @@ relation2 = Relation.new({
 relation2.save()
 
 relation3 = Relation.new({
-  "exhibit_id" => exhibit1.id,
+  "exhibit_id" => exhibit2.id,
   "category_id" => category1.id
   })
 relation3.save()
@@ -279,7 +279,7 @@ relation5 = Relation.new({
   "exhibit_id" => exhibit3.id,
   "category_id" => category1.id
   })
-relation1.save()
+relation5.save()
 
 relation6 = Relation.new({
   "exhibit_id" => exhibit3.id,

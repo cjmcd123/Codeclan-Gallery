@@ -10,10 +10,13 @@ also_reload("../models/*")
 
 get '/exhibits' do
   @exhibits = Exhibit.all()
+  @artists = Artist.all()
+  @types = Type.all()
+  @categories = Category.all()
   erb (:"exhibits/index_visitor")
 end
 
 get '/exhibits/:id' do
-  @exhibits = Exhibit.find(params['id'].to_i)
+  @exhibit = Exhibit.find(params['id'].to_i)
   erb(:"exhibits/show_visitor")
 end

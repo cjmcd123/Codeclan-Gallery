@@ -54,7 +54,7 @@ class Exhibit
     # input.
     # 4. return the the data from the database and transform it into an instances
     # of the class.
-    sql = "SELECT name FROM artist WHERE id = $1"
+    sql = "SELECT name FROM artists WHERE id = $1"
     values = [@artist_id]
     results = SqlRunner.run(sql, values)
     answer = Artist.new(results.first)
@@ -70,7 +70,7 @@ class Exhibit
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-    sql = "SELECT name FROM type WHERE id = $1"
+    sql = "SELECT type FROM types WHERE id = $1"
     values = [@type_id]
     results = SqlRunner.run(sql, values)
     answer = Type.new(results.first)
@@ -88,10 +88,13 @@ class Exhibit
     # input.
     # 4. return the the data from the database and map it to an array of class
     # instances.
-    sql = "SELECT * FROM categories WHERE exhibit_id = $1"
+    sql = "SELECT categories.* FROM categories
+    INNER JOIN relations
+    ON categories.id = relations.category_id
+    WHERE relations.exhibit_id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
-    return results.map {|exhibit| Exhibit.new(exhibit)}
+    return results.map {|category| Category.new(category)}
   end
 
   def delete()
