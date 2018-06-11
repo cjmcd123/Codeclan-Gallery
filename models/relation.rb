@@ -1,8 +1,10 @@
 require_relative( '../db/sql_runner' )
+# calls the sql runner file to allow running of SQL requests outside of class
 
 class Relation
 
-  attr_reader( :zombie_id, :victim_id, :id )
+  attr_reader :id
+  attr_accessor :exhibit_id, :category_id
 
   def initialize(options)
     # method called when creating the class instance, populates the variables
@@ -23,9 +25,9 @@ class Relation
     # 4. return the id created by the serial field of the database table to the
     # instance of the class.
     sql = "INSERT INTO relations
-      (exhibit_id, category_id)
+    (exhibit_id, category_id)
     VALUES
-      ($1, $2)
+    ($1, $2)
     RETURNING id"
     values = [@exhibit_id, @category_id]
     results = SqlRunner.run(sql, values)
@@ -34,7 +36,7 @@ class Relation
 
   def update()
     sql = "UPDATE relations SET
-      (exhibit_id, category_id) =  ($1, $2)
+    (exhibit_id, category_id) =  ($1, $2)
     WHERE id = $3"
     values = [@exhibit_id, @category_id, @id]
     SqlRunner.run(sql, values)
@@ -49,7 +51,7 @@ class Relation
     # input.
     # 4. return the the data from the database and transform it into an instance
     # of the class.
-    sql = "SELECT * FROM exhibit WHERE id = $1"
+    sql = "SELECT * FROM exhibits WHERE id = $1"
     values = [@exhibit_id]
     results = SqlRunner.run(sql, values)
     return Exhibit.new(results.first)

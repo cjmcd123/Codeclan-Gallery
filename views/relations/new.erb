@@ -1,0 +1,20 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<br></br>
+  <form method="post" action="/admin/relations">
+    <select id="exhibit_id" name="exhibit_id">
+      <%for exhibit in @exhibits%>
+      <option value="<%=exhibit.id%>"><%=exhibit.title%></option>
+      <%end%>
+    </select>
+    <select id="category-select" name="category_id">
+      <%for category in @categories%>
+      <option value="<%=category.id%>"><%=category.category%></option>
+      <%end%>
+    </select>
+    <input type="submit" value="Add Relation"/>
+</form>

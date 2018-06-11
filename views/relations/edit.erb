@@ -1,0 +1,29 @@
+<style>
+nav.public {
+  display: none;
+}
+</style>
+
+<br></br>
+
+<form method="post" action="/admin/relations/<%=@relation.id%>">
+  <select id="exhibit-select" name="exhibit_id">
+    <%for exhibit in @exhibits%>
+    <% if @relation.exhibit_id.to_i == exhibit.id.to_i %>
+    <option value="<%=exhibit.id%>" selected="selected"><%=exhibit.title%></option>
+    <%else%>
+    <option value="<%=exhibit.id%>"><%=exhibit.title%></option>
+    <%end%>
+    <%end%>
+  </select>
+  <select id="category-select" name="category_id">
+    <%for category in @categories%>
+    <% if @relation.category_id.to_i == category.id.to_i %>
+    <option value="<%=category.id%>" selected="selected"><%=category.category%></option>
+    <%else%>
+    <option value="<%=category.id%>"><%=category.category%></option>
+    <%end%>
+    <%end%>
+  </select>
+  <input type="submit" value="Edit Details"/>
+</form>
