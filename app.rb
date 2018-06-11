@@ -7,5 +7,9 @@ require_relative("controllers/type_controller")
 require_relative("controllers/relation_controller")
 
 get '/' do
-  erb( :index )
+  erb(:index)
+end
+
+get '/admin' do
+  erb(:index_admin)
 end
