@@ -5,6 +5,7 @@ require_relative("./controllers/category_controller")
 require_relative("./controllers/exhibit_controller")
 require_relative("./controllers/type_controller")
 require_relative("./controllers/relation_controller")
+require_relative("./controllers/filter_controller")
 
 get '/' do
   erb(:index)

@@ -144,4 +144,54 @@ class Exhibit
     SqlRunner.run(sql)
   end
 
+  def self.filter_by_artist(id)
+    # method for returning the exhibits relating to a particular artist:
+    # 1. SQL code with command "SELECT", the table selected from & the selection
+    # criteria.
+    # 2. pass in the value for selection.
+    # 3. run the SQL code with the values through the sql runner for sanatised
+    # input.
+    # 4. return the the data from the database and map it to an array of class
+    # instances.
+    sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|exhibit| Exhibit.new(exhibit)}
+  end
+
+  def self.filter_by_type(id)
+    # method for returning the exhibits relating to a particular type:
+    # 1. SQL code with command "SELECT", the table selected from & the selection
+    # criteria.
+    # 2. pass in the value for selection.
+    # 3. run the SQL code with the values through the sql runner for sanatised
+    # input.
+    # 4. return the the data from the database and map it to an array of class
+    # instances.
+    sql = "SELECT * FROM exhibits WHERE type_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|exhibit| Exhibit.new(exhibit)}
+  end
+
+  def self.filter_by_category(id)
+    # method for returning the exhibits relating to a particular category:
+    # 1. SQL code with command "SELECT", the table selected from & the selection
+    # criteria.
+    # note this SQL code will use an INNER JOIN as the relationship between
+    # exhibits & categories is many-to-many
+    # 2. pass in the value for selection.
+    # 3. run the SQL code with the values through the sql runner for sanatised
+    # input.
+    # 4. return the the data from the database and map it to an array of class
+    # instances.
+    sql = "SELECT exhibits.* FROM exhibits
+    INNER JOIN relations
+    ON exhibits.id = relations.exhibit_id
+    WHERE relations.category_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|exhibit| Exhibit.new(exhibit)}
+  end
+
 end
