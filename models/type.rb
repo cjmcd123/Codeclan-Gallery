@@ -61,7 +61,7 @@ class Type
     # 1. SQL code with command "DELETE" the table selected from & the selection
     # criteria.
     # 2. run the SQL code through the sql runner for sanatised input.
-    sql = "DELETE * FROM types WHERE id = $1"
+    sql = "DELETE FROM types WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
