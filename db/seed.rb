@@ -289,37 +289,37 @@ relation6.save()
 
 relation7 = Relation.new({
   "exhibit_id" => exhibit4.id,
-  "category_id" => category12.id
+  "category_id" => category11.id
   })
 relation7.save()
 
 relation8 = Relation.new({
   "exhibit_id" => exhibit4.id,
-  "category_id" => category14.id
+  "category_id" => category13.id
   })
 relation8.save()
 
 relation9 = Relation.new({
   "exhibit_id" => exhibit5.id,
-  "category_id" => category12.id
+  "category_id" => category11.id
   })
 relation9.save()
 
 relation10 = Relation.new({
   "exhibit_id" => exhibit5.id,
-  "category_id" => category14.id
+  "category_id" => category13.id
   })
 relation10.save()
 
 relation11 = Relation.new({
   "exhibit_id" => exhibit6.id,
-  "category_id" => category12.id
+  "category_id" => category11.id
   })
 relation11.save()
 
 relation12 = Relation.new({
   "exhibit_id" => exhibit6.id,
-  "category_id" => category13.id
+  "category_id" => category12.id
   })
 relation12.save()
 
@@ -331,37 +331,37 @@ relation13.save()
 
 relation14= Relation.new({
   "exhibit_id" => exhibit7.id,
-  "category_id" => category6.id
+  "category_id" => category5.id
   })
 relation14.save()
 
 relation15 = Relation.new({
   "exhibit_id" => exhibit7.id,
-  "category_id" => category12.id
+  "category_id" => category11.id
   })
 relation15.save()
 
 relation16 = Relation.new({
   "exhibit_id" => exhibit8.id,
-  "category_id" => category11.id
+  "category_id" => category10.id
   })
 relation16.save()
 
 relation17 = Relation.new({
   "exhibit_id" => exhibit8.id,
-  "category_id" => category12.id
+  "category_id" => category11.id
   })
 relation17.save()
 
 relation18 = Relation.new({
   "exhibit_id" => exhibit9.id,
-  "category_id" => category10.id
+  "category_id" => category9.id
   })
 relation18.save()
 
 relation19 = Relation.new({
   "exhibit_id" => exhibit9.id,
-  "category_id" => category12.id
+  "category_id" => category10.id
   })
 relation19.save()
 
@@ -373,13 +373,13 @@ relation20.save()
 
 relation21 = Relation.new({
   "exhibit_id" => exhibit10.id,
-  "category_id" => category5.id
+  "category_id" => category4.id
   })
 relation21.save()
 
 relation22 = Relation.new({
   "exhibit_id" => exhibit10.id,
-  "category_id" => category6.id
+  "category_id" => category5.id
   })
 relation22.save()
 
@@ -391,13 +391,13 @@ relation23.save()
 
 relation24 = Relation.new({
   "exhibit_id" => exhibit11.id,
-  "category_id" => category6.id
+  "category_id" => category5.id
   })
 relation24.save()
 
 relation25 = Relation.new({
   "exhibit_id" => exhibit11.id,
-  "category_id" => category9.id
+  "category_id" => category8.id
   })
 relation25.save()
 
@@ -409,7 +409,7 @@ relation26.save()
 
 relation27 = Relation.new({
   "exhibit_id" => exhibit12.id,
-  "category_id" => category5.id
+  "category_id" => category4.id
   })
 relation27.save()
 
@@ -421,13 +421,13 @@ relation28.save()
 
 relation29 = Relation.new({
   "exhibit_id" => exhibit13.id,
-  "category_id" => category4.id
+  "category_id" => category3.id
   })
 relation29.save()
 
 relation30 = Relation.new({
   "exhibit_id" => exhibit13.id,
-  "category_id" => category8.id
+  "category_id" => category7.id
   })
 relation30.save()
 
@@ -439,13 +439,13 @@ relation31.save()
 
 relation32 = Relation.new({
   "exhibit_id" => exhibit14.id,
-  "category_id" => category4.id
+  "category_id" => category3.id
   })
 relation32.save()
 
 relation33 = Relation.new({
   "exhibit_id" => exhibit14.id,
-  "category_id" => category8.id
+  "category_id" => category7.id
   })
 relation33.save()
 
@@ -457,13 +457,13 @@ relation34.save()
 
 relation35 = Relation.new({
   "exhibit_id" => exhibit15.id,
-  "category_id" => category4.id
+  "category_id" => category3.id
   })
 relation35.save()
 
 relation36 = Relation.new({
   "exhibit_id" => exhibit15.id,
-  "category_id" => category7.id
+  "category_id" => category6.id
   })
 relation36.save()
 

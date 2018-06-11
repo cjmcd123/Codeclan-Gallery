@@ -1,0 +1,18 @@
+<h1>Types</h1>
+
+<table>
+  <tr>
+    <th>Types</th>
+    <th></th>
+    <th>Exhibit Count</th>
+  </tr>
+
+  <% for type in @types %>
+  <tr>
+    <td><%= type.type%></td>
+    <td>|</td>
+    <td><a href="/exhibits/type/<%= type.id %>"><%= type.exhibits.count%></td>
+  </tr>
+  <%end%>
+
+</table>

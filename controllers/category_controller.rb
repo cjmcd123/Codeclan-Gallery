@@ -12,8 +12,3 @@ get '/categories' do
   @categories = Category.all()
   erb (:"categories/index_visitor")
 end
-
-get '/categories/:id' do
-  @categories = Category.find(params['id'].to_i)
-  erb(:"categories/show_visitor")
-end

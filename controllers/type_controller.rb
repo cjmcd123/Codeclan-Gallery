@@ -12,8 +12,3 @@ get '/types' do
   @types = Type.all()
   erb (:"types/index_visitor")
 end
-
-get '/types/:id' do
-  @types = Type.find(params['id'].to_i)
-  erb(:"types/show_visitor")
-end
