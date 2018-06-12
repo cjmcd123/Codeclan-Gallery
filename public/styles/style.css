@@ -7,7 +7,6 @@ header {
 }
 
 nav {
-
     height: 100%;
     width: 160px;
     position: fixed;
@@ -15,10 +14,9 @@ nav {
     top: 15%;
     left: 0;
     background-color: #3E5622;
-
     overflow-x: hidden;
     padding-top: 20px;
-
+    padding-left: 5px;
 };
 
 nav.a {
@@ -31,7 +29,6 @@ nav.a {
 
 nav.admin p {
   color: white;
-
 }
 
 a:link {
@@ -70,4 +67,42 @@ body {
   bottom:0px;
   overflow-y:scroll;
   font-family: Palatino;
+  padding: 25px;
+  /* display: flex; */
+}
+
+.visit_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.visit {
+  width: 40%;
+  padding: 25px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  margin: 5px;
+}
+
+.visit a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.visit a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.visit a:hover {
+    text-decoration: underline;
+    color: blue;
+    font-size: 150%;
+}
+
+.visit a:active {
+    text-decoration: underline;
 }

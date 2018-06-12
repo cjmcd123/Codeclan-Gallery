@@ -6,22 +6,18 @@ nav.admin {
 
 <h1>Artists</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Date of Birth</th>
-    <th></th>
-    <th>Exhibits</th>
-  </tr>
+<div class="visit_container">
 
-  <% for artist in @artists %>
-  <tr>
-    <td><a href="/artists/<%= artist.id%>"><%= artist.name%></a></td>
-    <td>|</td>
-    <td><%= artist.dob%></td>
-    <td>|</td>
-    <td><a href="/exhibits/artist/<%= artist.id %>">Show All exhibits by Artist</a></td>
-    </tr>
-  <%end%>
-</table>
+<% for artist in @artists %>
+<div class="visit">
+  <div>
+    <img src="/images/artists/<%= artist.name.downcase%>.jpg" width="280" height="330" title="<%=artist.name%> Portrait" alt="Portrait of Artist">
+  </div>
+  <div>
+    <p><a href="/artists/<%= artist.id%>"><%= artist.name%></a></p>
+    <p>Date of Birth: <%= artist.dob%></p>
+    <a href="/exhibits/artist/<%= artist.id %>">See All exhibits by Artist</a>
+  </div>
+</div>
+<% end %>
+</div>
