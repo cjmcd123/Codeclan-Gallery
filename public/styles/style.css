@@ -77,6 +77,15 @@ body {
   flex-wrap: wrap;
 }
 
+.exhibit_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+      overflow-x: auto;
+      max-width: 100%;
+
+}
+
 .visit {
   width: 40%;
   padding: 25px;
@@ -84,6 +93,17 @@ body {
   flex-wrap: wrap;
   display: flex;
   margin: 5px;
+}
+
+.exhibit {
+  width: 40%;
+  padding: 25px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  margin: 5px;
+  border-style: dashed; black;
+display: grid;
 }
 
 .visit a:link {
@@ -100,9 +120,39 @@ body {
 .visit a:hover {
     text-decoration: underline;
     color: blue;
-    font-size: 150%;
+
 }
 
 .visit a:active {
     text-decoration: underline;
+}
+
+.exhibit.text {
+border-bottom: 0px;
+}
+
+.exhibit a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.exhibit a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.exhibit a:hover {
+    text-decoration: underline;
+    color: blue;
+
+}
+
+.exhibit a:active {
+    text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+
 }

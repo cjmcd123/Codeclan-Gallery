@@ -11,7 +11,7 @@ nav.admin {
 <% for artist in @artists %>
 <div class="visit">
   <div>
-    <img src="/images/artists/<%= artist.name.downcase%>.jpg" width="280" height="330" title="<%=artist.name%> Portrait" alt="Portrait of Artist">
+    <img src="/images/artists/<%= artist.name.downcase%>.jpg" title="<%=artist.name%> Portrait" alt="Portrait of Artist">
   </div>
   <div>
     <p><a href="/artists/<%= artist.id%>"><%= artist.name%></a></p>
