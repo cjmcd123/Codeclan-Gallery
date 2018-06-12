@@ -28,13 +28,6 @@ get '/admin/categories/:id/add' do
   erb(:"categories/add")
 end
 
-get '/admin/categories/:id/modify' do
-  @categories = Category.all()
-  @relations = Relation.find_all(params[:id].to_i)
-  @exhibit = Exhibit.find(params[:id].to_i)
-  erb(:"categories/modify")
-end
-
 get "/admin/categories/:id/edit" do
   @category = Category.find(params[:id].to_i)
   erb(:"categories/edit")
@@ -49,11 +42,10 @@ end
 post '/admin/categories/:id/add' do
   # binding.pry
   @exhibit = Exhibit.find(params[:id].to_i)
-  # @relations = params[check_list].map {|relation| Relation.new(relation)}
   @relations = []
-for item in params[:check_list]
-  @relations << Relation.new({"exhibit_id" => @exhibit.id, "category_id" => item})
-end
+  for item in params[:check_list]
+    @relations << Relation.new({"exhibit_id" => @exhibit.id, "category_id" => item})
+  end
   for relation in @relations
     relation.save()
   end

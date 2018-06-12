@@ -19,6 +19,11 @@ get '/admin/relations/new' do
   erb (:"relations/new")
 end
 
+get '/admin/relations/:id' do
+  @relations = Relation.find_all(params[:id].to_i)
+  erb (:"relations/index_exhibit")
+end
+
 get "/admin/relations/:id/edit" do
   @relation = Relation.find(params[:id].to_i)
   @exhibits = Exhibit.all()
