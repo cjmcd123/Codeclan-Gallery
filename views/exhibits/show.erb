@@ -25,10 +25,10 @@ nav.public {
   <input type="submit" value="Delete Artist"/>
 </form>
 <br></br>
-<form method="get" action="/admin/categories/add">
+<form method="get" action="/admin/categories/<%= @exhibit.id%>/add">
   <input type="submit" value="Add Category"/>
 </form>
 <br></br>
-<form method="get" action="/admin/categories/modify">
+<form method="get" action="/admin/relations">
   <input type="submit" value="Modify Categories"/>
 </form>

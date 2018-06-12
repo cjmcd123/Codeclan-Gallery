@@ -118,4 +118,11 @@ class Relation
     sql = "DELETE FROM relations"
     SqlRunner.run(sql)
   end
+
+  def self.find_all(id)
+    sql = "SELECT * FROM relations WHERE exhibit_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|relation| Relation.new(relation)}
+  end
 end
