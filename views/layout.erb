@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Codeclan Galler</title>
-  <link rel="stylesheet" href="/style.css">
+  <title>Codeclan Gallery</title>
+  <link rel="stylesheet" href="/styles/style.css">
+
 </head>
+<header>
+  <h1>The Codeclan Gallery</h1>
+</header>
+
 <body>
   <nav class="public">
     <div class="container">
@@ -21,15 +26,16 @@
     <div class="container">
       <p>Admin</p>
       <div></div>
-      <div class="box home"><a href="/">Home</a></div>
+      <div class="box home"><a href="/admin">Home</a></div>
       <div class="box artists"><a href="/admin/artists">Artists</a></div>
       <div class="box exhibits"><a href="/admin/exhibits">Exhibits</a></div>
       <div class="box types"><a href="/admin/types">Types</a></div>
       <div class="box categories"><a href="/admin/categories">Categories</a></div>
       <div class="box relations"><a href="/admin/relations">Relations</a></div>
+      <div class="box exit"><a href="/">Exit Admin</a></div>
     </div>
   </nav>
-  <div>
+  <div class="main">
     <%= yield %>
   </div>
 </body>
