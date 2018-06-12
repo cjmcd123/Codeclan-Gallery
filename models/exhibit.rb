@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Exhibit
 
   attr_reader :id
-  attr_accessor :title, :year, :artist_id, :type_id
+  attr_accessor :title, :year, :artist_id, :type_id, :url
 
   def initialize(options)
     # method called when creating the class instance, populates the variables
@@ -14,6 +14,7 @@ class Exhibit
     @year = options["year"]
     @artist_id = options["artist_id"]
     @type_id = options["type_id"]
+    @url = options["url"]
   end
 
   def save()
@@ -27,21 +28,21 @@ class Exhibit
     # 4. return the id created by the serial field of the database table to the
     # instance of the class.
     sql = "INSERT INTO exhibits
-      (title, year, artist_id, type_id)
+      (title, year, artist_id, type_id, url)
     VALUES
-      ($1, $2, $3, $4)
+      ($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@title, @year, @artist_id, @type_id]
+    values = [@title, @year, @artist_id, @type_id, @url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE exhibits SET
-      (title, year, artist_id, type_id) =
-      ($1, $2, $3, $4)
-    WHERE id = $5"
-    values = [@title, @year, @artist_id, @type_id, @id]
+      (title, year, artist_id, type_id, url) =
+      ($1, $2, $3, $4, $5)
+    WHERE id = $6"
+    values = [@title, @year, @artist_id, @type_id, @url, @id]
     SqlRunner.run(sql, values)
   end
 

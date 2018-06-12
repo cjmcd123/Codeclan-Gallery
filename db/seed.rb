@@ -13,31 +13,36 @@ Relation.delete_all()
 
 artist1 = Artist.new({
   "name" => "Vincent van Gogh",
-  "dob" => "1853-03-30"
+  "dob" => "1853-03-30",
+  "url" => "https://m.media-amazon.com/images/M/MV5BYzk5ODM5MDEtNjA2YS00Y2U4LWI0YTktY2E2ZDMxY2NlMzhkXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UY317_CR18,0,214,317_AL_.jpg"
   })
 artist1.save()
 
 artist2 = Artist.new({
   "name" => "Pablo Picasso",
-  "dob" => "1881-10-25"
+  "dob" => "1881-10-25",
+  "url" => "https://m.media-amazon.com/images/M/MV5BMzQ5MjgwOTM2Ml5BMl5BanBnXkFtZTgwNjkzNjQyNTM@._V1_SY1000_CR0,0,1019,1000_AL_.jpg"
   })
 artist2.save()
 
 artist3 = Artist.new({
   "name" => "Leonardo da Vinci",
-  "dob" => "1452-04-15"
+  "dob" => "1452-04-15",
+  "url" => "https://upload.wikimedia.org/wikipedia/commons/f/f7/Francesco_Melzi_-_Portrait_of_Leonardo_-_WGA14795.jpg"
   })
 artist3.save()
 
 artist4 = Artist.new({
   "name" => "Michelangelo",
-  "dob" => "1475-03-06"
+  "dob" => "1475-03-06",
+  "url" => "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg/440px-Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg"
   })
 artist4.save()
 
 artist5 = Artist.new({
   "name" => "Jackson Pollock",
-  "dob" => "1912-01-28"
+  "dob" => "1912-01-28",
+  "url" => "https://www.jackson-pollock.org/images/jackson_pollock.jpg"
   })
 artist5.save()
 
@@ -135,7 +140,8 @@ exhibit1 = Exhibit.new({
   "title" => "Autumn Rhythm",
   "year" => 1950,
   "artist_id" => artist5.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.jackson-pollock.org/images/paintings/autumn-rhythm.jpg"
   })
 exhibit1.save()
 
@@ -143,7 +149,8 @@ exhibit2 = Exhibit.new({
   "title" => "Mural on Indian Red Ground",
   "year" => 1950,
   "artist_id" => artist5.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.jackson-pollock.org/images/paintings/mural-on-indian-red-ground.jpg"
   })
 exhibit2.save()
 
@@ -151,7 +158,8 @@ exhibit3 = Exhibit.new({
   "title" => "Blue Poles",
   "year" => 1952,
   "artist_id" => artist5.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.jackson-pollock.org/images/paintings/blue-poles.jpg"
   })
 exhibit3.save()
 
@@ -159,7 +167,8 @@ exhibit4 = Exhibit.new({
   "title" => "Doni Tondo",
   "year" => 1507,
   "artist_id" => artist4.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.michelangelo.org/images/artworks/doni-tondo.jpg"
   })
 exhibit4.save()
 
@@ -167,7 +176,8 @@ exhibit5 = Exhibit.new({
   "title" => "David",
   "year" => 1504,
   "artist_id" => artist4.id,
-  "type_id" => type3.id
+  "type_id" => type3.id,
+  "url" => "https://www.michelangelo.org/david.jsp"
   })
 exhibit5.save()
 
@@ -175,7 +185,8 @@ exhibit6 = Exhibit.new({
   "title" => "The Libyan Sibyl - sketch",
   "year" => 1510,
   "artist_id" => artist4.id,
-  "type_id" => type2.id
+  "type_id" => type2.id,
+  "url" => "https://www.metmuseum.org/toah/images/hb/hb_24.197.2.jpg"
   })
 exhibit6.save()
 
@@ -183,7 +194,8 @@ exhibit7 = Exhibit.new({
   "title" => "Mona Lisa",
   "year" => 1517,
   "artist_id" => artist3.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/600px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
   })
 exhibit7.save()
 
@@ -191,7 +203,8 @@ exhibit8 = Exhibit.new({
   "title" => "Vitruvian Man",
   "year" => 1490,
   "artist_id" => artist3.id,
-  "type_id" => type2.id
+  "type_id" => type2.id,
+  "url" => "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/600px-Da_Vinci_Vitruve_Luc_Viatour.jpg"
   })
 exhibit8.save()
 
@@ -199,7 +212,8 @@ exhibit9 = Exhibit.new({
   "title" => "Codex Atlanticus",
   "year" => 1519,
   "artist_id" => artist3.id,
-  "type_id" => type4.id
+  "type_id" => type4.id,
+  "url" => "https://upload.wikimedia.org/wikipedia/commons/8/89/Codice_Atlantico_-_Legatura.jpg"
   })
 exhibit9.save()
 
@@ -207,7 +221,8 @@ exhibit10 = Exhibit.new({
   "title" => "Girl with a Mandolin",
   "year" => 1910,
   "artist_id" => artist2.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.pablopicasso.org/images/paintings/girl-with-mandolin.jpg"
   })
 exhibit10.save()
 
@@ -215,7 +230,8 @@ exhibit11 = Exhibit.new({
   "title" => "The Old Guitarist",
   "year" => 1904,
   "artist_id" => artist2.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.pablopicasso.org/images/paintings/the-old-guitarist.jpg"
   })
 exhibit11.save()
 
@@ -223,7 +239,8 @@ exhibit12 = Exhibit.new({
   "title" => "Guitar",
   "year" => 1914,
   "artist_id" => artist2.id,
-  "type_id" => type3.id
+  "type_id" => type3.id,
+  "url" => "https://www.pablopicasso.org/images/paintings/guitar.jpg"
   })
 exhibit12.save()
 
@@ -231,7 +248,8 @@ exhibit13 = Exhibit.new({
   "title" => "Starry Night over Rhone",
   "year" => 1888,
   "artist_id" => artist1.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.vincentvangogh.org/images/paintings/the-starry-night-over-the-rhone.jpg"
   })
 exhibit13.save()
 
@@ -239,7 +257,8 @@ exhibit14 = Exhibit.new({
   "title" => "Road with Cypress & Star",
   "year" => 1890,
   "artist_id" => artist1.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.vincentvangogh.org/images/paintings/country-road-with-cypresses.jpg"
   })
 exhibit14.save()
 
@@ -247,7 +266,8 @@ exhibit15 = Exhibit.new({
   "title" => "Self Portrait with Grey Felt Hat",
   "year" => 1888,
   "artist_id" => artist1.id,
-  "type_id" => type1.id
+  "type_id" => type1.id,
+  "url" => "https://www.vincentvangogh.org/images/paintings/self-portrait-with-grey-felt-hat.jpg"
   })
 exhibit15.save()
 

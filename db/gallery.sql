@@ -14,7 +14,8 @@ CREATE TABLE artists
 (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
-  dob DATE
+  dob DATE,
+  url VARCHAR(255)
 );
 
 CREATE TABLE categories
@@ -29,7 +30,8 @@ CREATE TABLE exhibits
   title VARCHAR(255),
   year VARCHAR(255),
   artist_id INT8 REFERENCES artists(id) ON DELETE CASCADE,
-  type_id INT8 REFERENCES types(id) ON DELETE CASCADE
+  type_id INT8 REFERENCES types(id) ON DELETE CASCADE,
+  url VARCHAR(255)
 );
 
 CREATE TABLE relations
