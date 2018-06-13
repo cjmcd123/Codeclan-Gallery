@@ -5,6 +5,7 @@ header {
   text-align: center;
   color: white;
   border-top: 5px;
+  font-family: Verdana;
 }
 
 header a:link {
@@ -37,6 +38,7 @@ nav {
   overflow-x: hidden;
   padding-top: 20px;
   padding-left: 5px;
+  font-family: Courier;
 }
 
 body {
@@ -45,6 +47,10 @@ body {
 
 img {
   max-width: 100%;
+}
+
+td {
+  font-size: 12px;
 }
 
 nav.a {
@@ -69,8 +75,9 @@ nav.admin p {
   right:0px;
   bottom:0px;
   overflow-y:scroll;
-  font-family: Palatino;
+  font-family: Courier;
   padding: 25px;
+font-size: 16px;
   /* display: flex; */
 }
 
@@ -128,6 +135,14 @@ nav.admin p {
   display: flex;
 }
 
+.text td {
+  font-size: 16px;
+}
+
+.text td a:link {
+  font-size: 16px;
+}
+
 .exhibit.text {
   margin: 10px;
   border-bottom: 0px;
@@ -168,7 +183,7 @@ nav a:visited {
 
 nav a:hover {
   text-decoration: underline;
-  font-size: 150%;
+  font-size: 130%;
 }
 
 nav a:active {
@@ -179,7 +194,7 @@ nav a:active {
 a:link {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 a:visited {
@@ -194,4 +209,8 @@ a:hover {
 
 a:active {
   text-decoration: underline;
+}
+
+td a:link {
+    font-size: 12px;
 }

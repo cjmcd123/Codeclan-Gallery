@@ -11,7 +11,9 @@ nav.public {
     <th>Type</th>
     <th></th>
     <th>Exhibit Count</th>
+    <th></th>
     <th>Edit</th>
+    <th></th>
     <th>Delete</th>
   </tr>
 
@@ -20,11 +22,13 @@ nav.public {
     <td><%= type.type%></td>
     <td>|</td>
     <td><a href="/admin/exhibits/types/<%= type.id %>"><%= type.exhibits.count%></td>
-      <td>
+          <td>|</td>
+          <td>
       <form method="get" action="/admin/types/<%= type.id%>/edit">
         <input type="submit" value="Modify Type"/>
       </form>
     </td>
+        <td>|</td>
     <td>
       <form method="post" action="/admin/types/<%= type.id%>/delete">
         <input type="submit" value="Delete Type"/>

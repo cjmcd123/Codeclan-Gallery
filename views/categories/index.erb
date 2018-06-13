@@ -11,7 +11,9 @@ nav.public {
     <th>Category</th>
     <th></th>
     <th>Exhibit Count</th>
+    <th></th>
     <th>Edit</th>
+    <th></th>
     <th>Delete</th>
   </tr>
 
@@ -20,11 +22,13 @@ nav.public {
     <td><%= category.category%></td>
     <td>|</td>
     <td><a href="/admin/exhibits/category/<%= category.id %>"><%= category.exhibits.count%></td>
-      <td>
+          <td>|</td>
+          <td>
       <form method="get" action="/admin/categories/<%= category.id%>/edit">
         <input type="submit" value="Modify Category"/>
       </form>
     </td>
+        <td>|</td>
     <td>
       <form method="post" action="/admin/categories/<%= category.id%>/delete">
         <input type="submit" value="Delete Category"/>
@@ -34,7 +38,7 @@ nav.public {
   <%end%>
 </table>
 
-<div class="button"
+<div class="button">
   <form method="get" action="/admin/categories/new">
     <input type="submit" value="New Category"/>
   </form>

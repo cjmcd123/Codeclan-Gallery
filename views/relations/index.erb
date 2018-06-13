@@ -11,7 +11,9 @@ nav.public {
     <th>Exhibit</th>
     <th></th>
     <th>Category</th>
+        <th></th>
     <th>Edit</th>
+        <th></th>
     <th>Delete</th>
   </tr>
 
@@ -20,11 +22,13 @@ nav.public {
     <td><%= relation.exhibit.title%></td>
     <td>|</td>
     <td><%= relation.category.category%></td>
+        <td>|</td>
     <td>
       <form method="get" action="/admin/relations/<%= relation.id%>/edit">
         <input type="submit" value="Modify Relation"/>
       </form>
     </td>
+        <td>|</td>
     <td>
       <form method="post" action="/admin/relations/<%= relation.id%>/delete">
         <input type="submit" value="Delete Relation"/>
