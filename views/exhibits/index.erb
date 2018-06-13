@@ -17,8 +17,6 @@ nav.public {
     <th>Type</th>
     <th></th>
     <th>Categories</th>
-    <th></th>
-    <th>URL</th>
   </tr>
 
   <% for exhibit in @exhibits %>
@@ -38,7 +36,6 @@ nav.public {
       <a href="/admin/exhibits/category/<%= member.id%>"><%= member.category%></a>
       <% end %>
     </td>
-    <td><%= exhibit.url%></td>
   </tr>
   <%end%>
   </table>
