@@ -6,37 +6,22 @@ nav.admin {
 
 <h1>Exhibits Filtered by Artist: <%= @name%></h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th>Year</th>
-    <th></th>
-    <th>Artist</th>
-    <th></th>
-    <th>Type</th>
-    <th></th>
-    <th>Categories</th>
-  </tr>
+<div class="exhibit_container">
 
-  <% for exhibit in @exhibits %>
-  <tr>
-    <td><a href="/exhibits/<%= exhibit.id%>"><%= exhibit.title%></a></td>
-    <td>|</td>
-    <td><%= exhibit.year%></td>
-    <td>|</td>
-    <td><a href="/artists/<%= exhibit.artist_id %>"><%= exhibit.artist_name%></a></td>
-    <td>|</td>
-    <td><a href="/exhibits/type/<%= exhibit.type_id %>"><%= exhibit.type_name%></a></td>
-    <td>|</td>
+<% for exhibit in @exhibits%>
+<div class="exhibit">
+  <div>
+<a href="/exhibits/<%= exhibit.id%>"><img src="/images/exhibits/<%= exhibit.title.downcase%>.jpg"  title="<%=exhibit.title%>" alt="Exhibit Picture"></a>
+</div>
+  <br></br>
+<div class="text">
 
-    <td>
-      <% array = exhibit.categories()%>
-      <% for member in array %>
-      <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
-      <% end %>
-    </td>
+<tr>
+  <td><a href="/exhibits/<%= exhibit.id%>"><%= exhibit.title%></a></td>
+  <td>|</td>
+  <td><a href="/artists/<%= exhibit.artist_id %>"><%= exhibit.artist_name%></a></td>
+</div>
+</div>
+<% end %>
 
-  </tr>
-  <%end%>
-</table>
+</div>

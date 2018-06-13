@@ -6,13 +6,17 @@ nav.public {
 
 <h1>Artists</h1>
 
+<div class="admin_table">
 <table>
   <tr>
     <th>Name</th>
     <th></th>
     <th>Date of Birth</th>
     <th></th>
+    <th>Date of Death</th>
+    <th><th>
     <th>Exhibits</th>
+
   </tr>
 
   <% for artist in @artists %>
@@ -21,11 +25,17 @@ nav.public {
     <td>|</td>
     <td><%= artist.dob%></td>
     <td>|</td>
+    <td><%= artist.dod%></td>
+    <td>|</td>
     <td><a href="/admin/exhibits/artist/<%= artist.id %>">Show All exhibits by Artist</a></td>
+    <td>|</td>
     </tr>
   <%end%>
+</div>
+</table>
+<div class="button">
 
   <form method="get" action="/admin/artists/new">
     <input type="submit" value="New Artist"/>
   </form>
-</table>
+</div>

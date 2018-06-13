@@ -4,9 +4,23 @@ nav.admin {
 }
 </style>
 
-<form method="get" action="/exhibits/artist/<%= @artist.id%>">
-  <p>Name: <%=@artist.name%></p>
-  <p>Date of Birth: <%=@artist.dob%></p>
+<div class="visit_container">
 
-  <input type="submit" value="Exhibits by Artist"/>
-</form>
+
+<div class="individual">
+  <div>
+    <img src="/images/artists/<%= @artist.name.downcase%>.jpg" title="<%=@artist.name%> Portrait" alt="Portrait of Artist">
+  </div>
+  <div class="ind_text">
+    <p><a href="/artists/<%= @artist.id%>"><%= @artist.name%></a></p>
+    <p>Date of Birth: <%= @artist.dob%></p>
+    <p>Date of Death: <%= @artist.dod%></p>
+
+    <div class="button">
+  <form method="get" action="/exhibits/artist/<%= @artist.id%>">
+    <input type="submit" value="Exhibits by Artist"/>
+  </form>
+  </div>
+  </div>
+  </div>
+</div>

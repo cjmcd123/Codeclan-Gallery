@@ -10,7 +10,7 @@ nav.public {
   <input id="title" type="text" name="title" value="<%=@exhibit.title%>">
   <br></br>
   <label for="year">Year:</label>
-  <input id="year" type="date" name="year" value="<%=@exhibit.year%>">
+  <input id="year" type="text" name="year" value="<%=@exhibit.year%>">
   <br></br>
   <select id="artist-select" name="artist_id">
     <%for artist in @artists%>
@@ -32,7 +32,9 @@ nav.public {
     <%end%>
   </select>
   <br></br>
-
+  <label for="url">Title:</label>
+  <input id="url" type="text" name="url" value="<%=@exhibit.url%>">
+  <br></br>
 
   <input type="submit" value="Edit Details"/>
 </form>

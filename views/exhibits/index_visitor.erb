@@ -11,7 +11,7 @@ nav.admin {
 <% for exhibit in @exhibits%>
 <div class="exhibit">
   <div>
-<img src="/images/exhibits/<%= exhibit.title.downcase%>.jpg"  title="<%=exhibit.title%>" alt="Exhibit Picture">
+<a href="/exhibits/<%= exhibit.id%>"><img src="/images/exhibits/<%= exhibit.title.downcase%>.jpg"  title="<%=exhibit.title%>" alt="Exhibit Picture"></a>
 </div>
   <br></br>
 <div class="text">

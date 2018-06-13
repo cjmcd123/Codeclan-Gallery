@@ -6,6 +6,8 @@ nav.admin {
 
 <h1>Categories</h1>
 
+<div class="text">
+
 <table>
   <tr>
     <th>Category</th>
@@ -14,7 +16,7 @@ nav.admin {
   </tr>
 
   <% for category in @categories %>
-  <tr>
+  <tr">
     <td><%= category.category%></td>
     <td>|</td>
     <td><a href="/exhibits/category/<%= category.id %>"><%= category.exhibits.count%></td>
@@ -22,3 +24,4 @@ nav.admin {
   <%end%>
 
 </table>
+</div>

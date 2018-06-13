@@ -1,59 +1,62 @@
 header {
-  height: 10%;
+  height: 5%;
   width: 100%;
   background-color: #172815;
   text-align: center;
   color: white;
+  border-top: 5px;
 }
 
-nav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 15%;
-    left: 0;
-    background-color: #3E5622;
-    overflow-x: hidden;
-    padding-top: 20px;
-    padding-left: 5px;
-};
-
-nav.a {
-  padding: 6px 8px 6px 16px;
-   text-decoration: none;
-   font-size: 25px;
-   color: white;
-   display: block;
+header a:link {
+  font-size: 35px;
 }
 
-nav.admin p {
+header a:visited {
+  text-decoration: none;
   color: white;
 }
 
-a:link {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
+header a:hover {
+  text-decoration: underline;
+  color: blue;
+
 }
 
-a:visited {
-    text-decoration: none;
-    color: white;
+header a:active {
+  text-decoration: underline;
 }
 
-a:hover {
-    text-decoration: underline;
-    font-size: 150%;
-}
-
-a:active {
-    text-decoration: underline;
+nav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 12%;
+  left: 0;
+  background-color: #3E5622;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 5px;
 }
 
 body {
   background-color: #172815;
+}
 
+img {
+  max-width: 100%;
+}
+
+nav.a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+nav.admin p {
+  color: white;
 }
 
 .main {
@@ -61,7 +64,7 @@ body {
   text-align: left;
   min-width: 500px;
   position:absolute;
-  top: 15%;
+  top: 12%;
   left:160px;
   right:0px;
   bottom:0px;
@@ -81,9 +84,14 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-      overflow-x: auto;
-      max-width: 100%;
+  overflow-x: auto;
+  max-width: 100%;
+}
 
+.individual {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .visit {
@@ -102,57 +110,88 @@ body {
   flex-wrap: wrap;
   display: flex;
   margin: 5px;
-  border-style: dashed; black;
-display: grid;
+  display: grid;
 }
 
-.visit a:link {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
+.text {
+  margin: 10px;
+  border-bottom: 0px;
 }
 
-.visit a:visited {
-    text-decoration: none;
-    color: white;
+.ind_text {
+  padding: 25px;
 }
 
-.visit a:hover {
-    text-decoration: underline;
-    color: blue;
-
-}
-
-.visit a:active {
-    text-decoration: underline;
+.visit_dis {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: flex;
 }
 
 .exhibit.text {
-border-bottom: 0px;
+  margin: 10px;
+  border-bottom: 0px;
 }
 
-.exhibit a:link {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
+.individual.text {
+  margin: 25px;
+  padding: 25px;
+  border-bottom: 0px;
 }
 
-.exhibit a:visited {
-    text-decoration: none;
-    color: white;
+.individual img {
+  max-width: 40%;
 }
 
-.exhibit a:hover {
-    text-decoration: underline;
-    color: blue;
-
+.ind_exhibit img {
+  max-width: 60%;
 }
 
-.exhibit a:active {
-    text-decoration: underline;
+.button {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  margin: 25px;
 }
 
-img {
-  max-width: 100%;
 
+nav a:link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+nav a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  font-size: 150%;
+}
+
+nav a:active {
+  text-decoration: underline;
+}
+
+
+a:link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+a:active {
+  text-decoration: underline;
 }

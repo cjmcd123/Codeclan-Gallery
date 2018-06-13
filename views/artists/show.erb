@@ -4,15 +4,26 @@ nav.public {
 }
 </style>
 
-<form method="get" action="/admin/exhibits/artist/<%= @artist.id%>">
-  <p>Name: <%=@artist.name%></p>
-  <p>Date of Birth: <%=@artist.dob%></p>
+<div class="individual">
+  <div>
+    <img src="/images/artists/<%= @artist.name.downcase%>.jpg" title="<%=@artist.name%> Portrait" alt="Portrait of Artist">
+  </div>
+  <div class="ind_text">
+    <p><a href="/artists/<%= @artist.id%>"><%= @artist.name%></a></p>
+    <p>Date of Birth: <%= @artist.dob%></p>
+    <p>Date of Death: <%= @artist.dod%></p>
 
-  <input type="submit" value="Exhibits by Artist"/>
-</form>
-<form method="get" action="/admin/artists/<%= @artist.id%>/edit">
-  <input type="submit" value="Edit Artist"/>
-</form>
-<form method="post" action="/admin/artists/<%= @artist.id%>/delete">
-  <input type="submit" value="Delete Artist"/>
-</form>
+    <div class="button">
+  <form method="get" action="/admin/exhibits/artist/<%= @artist.id%>">
+    <input type="submit" value="Exhibits by Artist"/>
+  </form>
+  <form method="get" action="/admin/artists/<%= @artist.id%>/edit">
+    <input type="submit" value="Edit Artist"/>
+  </form>
+  <form method="post" action="/admin/artists/<%= @artist.id%>/delete">
+    <input type="submit" value="Delete Artist"/>
+  </form>
+  </div>
+  </div>
+  </div>
+</div>

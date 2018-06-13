@@ -21,19 +21,19 @@ nav.public {
 
   <% for exhibit in @exhibits %>
   <tr>
-    <td><a href="/exhibits/<%= exhibit.id%>"><%= exhibit.title%></a></td>
+    <td><a href="/admin/exhibits/<%= exhibit.id%>"><%= exhibit.title%></a></td>
     <td>|</td>
     <td><%= exhibit.year%></td>
     <td>|</td>
-    <td><a href="/artists/<%= exhibit.artist_id %>"><%= exhibit.artist_name%></a></td>
+    <td><a href="/admin/artists/<%= exhibit.artist_id %>"><%= exhibit.artist_name%></a></td>
     <td>|</td>
-    <td><a href="/exhibits/type/<%= exhibit.type_id %>"><%= exhibit.type_name%></a></td>
+    <td><a href="/admin/exhibits/type/<%= exhibit.type_id %>"><%= exhibit.type_name%></a></td>
     <td>|</td>
 
     <td>
       <% array = exhibit.categories()%>
       <% for member in array %>
-      <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
+      <a href="/admin/exhibits/category/<%= member.id%>"><%= member.category%></a>
       <% end %>
     </td>
 

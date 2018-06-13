@@ -5,24 +5,41 @@ nav.public {
 </style>
 
 
-  <p>Title: <%=@exhibit.title%></p>
-  <p>Year: <%=@exhibit.year%></p>
-  <p>Artist: <%=@exhibit.artist_name%></p>
-  <p>Type: <%=@exhibit.type_name%></p>
+<div class="exhibit_container">
+  <div class="ind_exhibit">
+    <div>
+      <img src="/images/exhibits/<%= @exhibit.title.downcase%>.jpg"  title="<%=@exhibit.title%>" alt="Exhibit Picture">
+    </div>
+    <br></br>
+    <div class="text">
+      <tr>
+        <td><a href="/admin/exhibits/<%= @exhibit.id%>"><%= @exhibit.title%></a></td>
+        <td>|</td>
+        <td><a href="/admin/artists/<%= @exhibit.artist_id %>"><%= @exhibit.artist_name%></a></td>
+        <td>|</td>
+        <td><a href="/admin/exhibits/type/<%= @exhibit.type_id %>"><%= @exhibit.type_name%></a></td>
+      </div>
+      <div class="text">
+        <tr>
+          <th>Categories</th>
+        </tr>
+        <tr>
+          <% array = @exhibit.categories()%>
+          <% for member in array %>
+          <a href="/admin/exhibits/category/<%= member.id%>"><%= member.category%></a>
+          <% end %>
+        </tr>
+      </div>
+    </div>
 
-  <tr>
-    <% array = @exhibit.categories()%>
-    <% for member in array %>
-    <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
-    <% end %>
-  </tr>
-<br></br>
+</div>
+<div class="button">
 <form method="get" action="/admin/exhibits/<%= @exhibit.id%>/edit">
   <input type="submit" value="Edit Exhibit"/>
 </form>
 <br></br>
 <form method="post" action="/admin/exhibits/<%= @exhibit.id%>/delete">
-  <input type="submit" value="Delete Artist"/>
+  <input type="submit" value="Delete Exhibit"/>
 </form>
 <br></br>
 <form method="get" action="/admin/categories/<%= @exhibit.id%>/add">
@@ -32,3 +49,4 @@ nav.public {
 <form method="get" action="/admin/relations/<%= @exhibit.id%>">
   <input type="submit" value="Modify Categories"/>
 </form>
+</div>

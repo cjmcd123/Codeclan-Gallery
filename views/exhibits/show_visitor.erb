@@ -4,15 +4,34 @@ nav.admin {
 }
 </style>
 
-  <p>Title: <%=@exhibit.title%></p>
-  <p>Year: <%=@exhibit.year%></p>
-  <p>Artist: <%=@exhibit.artist_name%></p>
-  <p>Type: <%=@exhibit.type_name%></p>
-  <p>Categories: </p>
 
-    <tr>
-      <% array = @exhibit.categories()%>
-      <% for member in array %>
-      <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
-      <% end %>
-    </tr>
+<div class="exhibit_container">
+  <div class="ind_exhibit">
+    <div>
+      <img src="/images/exhibits/<%= @exhibit.title.downcase%>.jpg"  title="<%=@exhibit.title%>" alt="Exhibit Picture">
+    </div>
+    <br></br>
+    <div class="text">
+      <tr>
+        <td><a href="/exhibits/<%= @exhibit.id%>"><%= @exhibit.title%></a></td>
+        <td>|</td>
+        <td><%= @exhibit.year%></td>
+        <td>|</td>
+        <td><a href="/artists/<%= @exhibit.artist_id %>"><%= @exhibit.artist_name%></a></td>
+        <td>|</td>
+        <td><a href="/types/<%= @exhibit.type_id %>"><%= @exhibit.type_name%></a></td>
+      </div>
+      <div class="text">
+        <tr>
+          <th>Categories</th>
+        </tr>
+        <tr>
+          <% array = @exhibit.categories()%>
+          <% for member in array %>
+          <a href="/exhibits/category/<%= member.id%>"><%= member.category%></a>
+          <% end %>
+        </tr>
+      </div>
+    </div>
+
+</div>

@@ -14,6 +14,7 @@ Relation.delete_all()
 artist1 = Artist.new({
   "name" => "Vincent van Gogh",
   "dob" => "1853-03-30",
+  "dod" => "1890-07-29",
   "url" => "https://m.media-amazon.com/images/M/MV5BYzk5ODM5MDEtNjA2YS00Y2U4LWI0YTktY2E2ZDMxY2NlMzhkXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UY317_CR18,0,214,317_AL_.jpg"
   })
 artist1.save()
@@ -21,6 +22,7 @@ artist1.save()
 artist2 = Artist.new({
   "name" => "Pablo Picasso",
   "dob" => "1881-10-25",
+  "dod" => "1973-04-08",
   "url" => "https://m.media-amazon.com/images/M/MV5BMzQ5MjgwOTM2Ml5BMl5BanBnXkFtZTgwNjkzNjQyNTM@._V1_SY1000_CR0,0,1019,1000_AL_.jpg"
   })
 artist2.save()
@@ -28,6 +30,7 @@ artist2.save()
 artist3 = Artist.new({
   "name" => "Leonardo da Vinci",
   "dob" => "1452-04-15",
+  "dod" => "1519-05-02",
   "url" => "https://upload.wikimedia.org/wikipedia/commons/f/f7/Francesco_Melzi_-_Portrait_of_Leonardo_-_WGA14795.jpg"
   })
 artist3.save()
@@ -35,6 +38,7 @@ artist3.save()
 artist4 = Artist.new({
   "name" => "Michelangelo",
   "dob" => "1475-03-06",
+  "dod" => "1564-02-18",
   "url" => "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg/440px-Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg"
   })
 artist4.save()
@@ -42,6 +46,7 @@ artist4.save()
 artist5 = Artist.new({
   "name" => "Jackson Pollock",
   "dob" => "1912-01-28",
+  "dod" => "1956-08-11",
   "url" => "https://www.jackson-pollock.org/images/jackson_pollock.jpg"
   })
 artist5.save()

@@ -4,7 +4,7 @@ require_relative( '../db/sql_runner' )
 class Artist
 
   attr_reader :id
-  attr_accessor :name, :dob, :url
+  attr_accessor :name, :dob, :dod, :url
 
   def initialize(options)
     # method called when creating the class instance, populates the variables
@@ -12,6 +12,7 @@ class Artist
     @id = options["id"].to_i if options["id"]
     @name = options["name"]
     @dob = options["dob"]
+    @dod = options["dod"]
     @url = options["url"]
   end
 
@@ -26,21 +27,21 @@ class Artist
     # 4. return the id created by the serial field of the database table to the
     # instance of the class.
     sql = "INSERT INTO artists
-      (name, dob, url)
+      (name, dob, dod, url)
     VALUES
-      ($1, $2, $3)
+      ($1, $2, $3, $4)
     RETURNING id"
-    values = [@name, @dob, @url]
+    values = [@name, @dob, @dod, @url]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
     sql = "UPDATE artists SET
-      (name, dob, url) =
-      ($1, $2, $3)
-    WHERE id = $4"
-    values = [@name, @dob, @url, @id]
+      (name, dob, dod, url) =
+      ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@name, @dob, @dod, @url, @id]
     SqlRunner.run(sql, values)
   end
 

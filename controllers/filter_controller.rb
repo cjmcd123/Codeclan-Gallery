@@ -9,37 +9,38 @@ require_relative("../models/type")
 also_reload("../models/*")
 
 get '/exhibits/artist/:id' do
-  @exhibits = Exhibit.filter_by_artist(params['id'].to_i)
-  @name = Artist.find(params['id'].to_i).name
+  @exhibits = Exhibit.filter_by_artist(params[:id].to_i)
+  @name = Artist.find(params[:id].to_i).name
   erb (:"filter/visitor_artist")
 end
 
 get '/exhibits/type/:id' do
-  @exhibits = Exhibit.filter_by_type(params['id'].to_i)
-  @type = Type.find(params['id'].to_i).type
+  @exhibits = Exhibit.filter_by_type(params[:id].to_i)
+  @type = Type.find(params[:id].to_i).type
   erb (:"filter/visitor_type")
 end
 
 get '/exhibits/category/:id' do
-  @exhibits = Exhibit.filter_by_category(params['id'].to_i)
-  @category = Category.find(params['id'].to_i).category
+  @exhibits = Exhibit.filter_by_category(params[:id].to_i)
+  @category = Category.find(params[:id].to_i).category
   erb (:"filter/visitor_cat")
 end
 
 get '/admin/exhibits/artist/:id' do
-  @exhibits = Exhibit.filter_by_artist(params['id'].to_i)
-  @name = Artist.find(params['id'].to_i).name
+  @exhibits = Exhibit.filter_by_artist(params[:id].to_i)
+  @name = Artist.find(params[:id].to_i).name
   erb (:"filter/admin_artist")
 end
 
-get 'admin/exhibits/type/:id' do
-  @exhibits = Exhibit.filter_by_artist(params['id'].to_i)
-  @type = Type.find(params['id'].to_i).type
+get '/admin/exhibits/type/:id' do
+  @exhibits = Exhibit.filter_by_artist(params[:id].to_i)
+  @type = Type.find(params[:id].to_i).type
   erb (:"filter/admin_type")
 end
 
-get 'admin/exhibits/category/:id' do
-  @exhibits = Exhibit.filter_by_artist(params['id'].to_i)
-  @category = Category.find(params['id'].to_i).category
+get '/admin/exhibits/category/:id' do
+  # binding.pry
+  @exhibits = Exhibit.filter_by_artist(params[:id].to_i)
+  @category = Category.find(params[:id].to_i).category
   erb (:"filter/admin_cat")
 end
